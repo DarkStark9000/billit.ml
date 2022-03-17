@@ -1,2 +1,4 @@
-# billit.ml
-A bill splitting and payments app.
+# Mini-JavaScript-Projects
+
+<h3>This repo serves as a library for all the Small to Medium JS Projects.</h3>
+

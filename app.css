@@ -4,7 +4,7 @@
   --xiketic-light: #4e4e4e;
   --platinum: #eaeaeaff;
   --neon-blue: #5863f8ff;
-  --twt-blue:#1DA1F2;
+  --twt-blue: #1da1f2;
   --go-green: #0ead69ff;
 }
 
@@ -26,7 +26,7 @@ a {
 }
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 16px;
   background: var(--xiketic);
   color: var(--platinum);
@@ -259,7 +259,7 @@ header {
 .simple-err {
   background-color: #f4717360;
   border-radius: 4px;
-  border: 1px solid #F47174;
+  border: 1px solid #f47174;
   padding: 18px;
   color: var(--neon-blue);
   font-size: 1rem;

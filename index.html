@@ -1,79 +1,252 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Easily Split your Bills and Expenses!</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="app.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="app.css" />
     <script src="app.js"></script>
-</head>
-<body>
+  </head>
+
+  <body>
     <header>
-        <div class="bigcap"> Bill Split </div>
-        <div class="cap"> Split it the easy way!</div>
+      <div class="bigcap">Bill Split</div>
+      <div class="cap">Split it the easy way!</div>
     </header>
-    
+
     <section>
-        <div class="container">
-            <div class="content advanced-mode">
+      <div class="container">
+        <div class="tog" style="padding: 18px">
+          <p>Simple Mode</p>
+          <label class="toggle-control">
+            <input
+              type="checkbox"
+              id="calcMode"
+              class="calcMode"
+              onclick="activateCalcMode()"
+              unchecked
+            />
+            <span class="control"></span>
+          </label>
+          <p>Advanced Mode</p>
+        </div>
+        <br /><br />
 
-            </div>
-            <div class="content simple-mode">
-                <div class="tog" style="padding: 18px;">
-                    <p> Simple Mode </p>
-                    <label class="toggle-control">
-                        <input type="checkbox">
-                        <span class="control"></span>
-                    </label>
-                    <p> Advanced Mode </p>
+        <div class="content advanced-mode" style="display: none">
+          <div class="calculatorAdv">
+            <form action="#" class="advUserForm">
+              <div class="inputGroup">
+                <div class="userFormAdv">
+                  <label for="name">Person Name</label><br />
+                  <input
+                    type="text"
+                    name="name"
+                    id="name"
+                    placeholder="Enter person name"
+                  />
+                  <br />
+                  <label for="amount">Amount Paid</label><br />
+                  <span class="line">
+                    <select name="currency" id="currency">
+                      <option value="$">$</option>
+                      <option value="₹" selected>₹</option>
+                      <option value="¥">¥</option>
+                      <option value="£">£</option>
+                      <option value="€">€</option>
+                      <option value="₣">₣</option>
+                    </select>
+                    <input
+                      type="number"
+                      name="amount"
+                      id="amount"
+                      placeholder="Enter amount"
+                    />
+                  </span>
+                  <br />
                 </div>
-                
-                <div class="calculator">
-                    <form action="#" id="userForm" class="userForm">
-                        <label for="event">Event Name</label><br>
-                        <input type="text" name="event" id="event" placeholder="Enter event name">
-                        <br>
-                        <label for="people">Number of People</label><br>
-                        <input type="number" name="people" id="people" placeholder="Enter number of people">
-                        <br>
-                        <label for="amount">Total Bill Amount</label><br>
-                        <span class="line">
-                            <select name="currency" id="currency">
-                                <option value="$">$</option>
-                                <option value="₹" selected>₹</option>
-                                <option value="¥">¥</option>
-                                <option value="£">£</option>
-                                <option value="€">€</option>
-                                <option value="₣">₣</option> 
-                            </select>
-                            <input type="number" name="amount" id="amount" placeholder="Enter amount">
-                        </span>
-                        <br>
-                        
-                        <center><button type="submit" class="submit" onclick="splitBill()">Split ⚡</button></center>
-                    </form>
+                <div class="userFormAdv">
+                  <label for="name">Person Name</label><br />
+                  <input
+                    type="text"
+                    name="name"
+                    id="name"
+                    placeholder="Enter person name"
+                  />
+                  <br />
+                  <label for="amount">Amount Paid</label><br />
+                  <span class="line">
+                    <select name="currency" id="currency">
+                      <option value="$">$</option>
+                      <option value="₹" selected>₹</option>
+                      <option value="¥">¥</option>
+                      <option value="£">£</option>
+                      <option value="€">€</option>
+                      <option value="₣">₣</option>
+                    </select>
+                    <input
+                      type="number"
+                      name="amount"
+                      id="amount"
+                      placeholder="Enter amount"
+                    />
+                  </span>
+                  <br />
                 </div>
-                <div class="err noerr">Unusable values, please check your input!</div>
+                <div class="userFormAdv">
+                  <label for="name">Person Name</label><br />
+                  <input
+                    type="text"
+                    name="name"
+                    id="name"
+                    placeholder="Enter person name"
+                  />
+                  <br />
+                  <label for="amount">Amount Paid</label><br />
+                  <span class="line">
+                    <select name="currency" id="currency">
+                      <option value="$">$</option>
+                      <option value="₹" selected>₹</option>
+                      <option value="¥">¥</option>
+                      <option value="£">£</option>
+                      <option value="€">€</option>
+                      <option value="₣">₣</option>
+                    </select>
+                    <input
+                      type="number"
+                      name="amount"
+                      id="amount"
+                      placeholder="Enter amount"
+                    />
+                  </span>
+                  <br />
+                </div>
+                <div class="userFormAdv">
+                  <label for="name">Person Name</label><br />
+                  <input
+                    type="text"
+                    name="name"
+                    id="name"
+                    placeholder="Enter person name"
+                  />
+                  <br />
+                  <label for="amount">Amount Paid</label><br />
+                  <span class="line">
+                    <select name="currency" id="currency">
+                      <option value="$">$</option>
+                      <option value="₹" selected>₹</option>
+                      <option value="¥">¥</option>
+                      <option value="£">£</option>
+                      <option value="€">€</option>
+                      <option value="₣">₣</option>
+                    </select>
+                    <input
+                      type="number"
+                      name="amount"
+                      id="amount"
+                      placeholder="Enter amount"
+                    />
+                  </span>
+                  <br />
+                </div>
+              </div>
+              <center>
+                <button
+                  type="submit"
+                  class="submit"
+                  onclick="splitBillAdvanced()"
+                >
+                  Split ⚡
+                </button>
+              </center>
+            </form>
+          </div>
 
-                <div class="result notCalculated"> 
-                    <div class="resultCap">
+          <div class="err noerr">Unusable values, please check your input!</div>
+
+          <div class="advanced-result notCalculated">
+            <!-- <div class="resultCap">
                         Each person pays: 
                     </div>
                     <div class="resultAmt">
                         $0.00
-                    </div>  
-                </div>
-            </div>
-        </div>  
+                    </div>   -->
+          </div>
+        </div>
+
+        <div class="content simple-mode">
+          <div class="calculator">
+            <form action="#" id="userForm" class="userForm">
+              <label for="event">Event Name</label><br />
+              <input
+                type="text"
+                name="event"
+                id="event"
+                placeholder="Enter event name"
+              />
+              <br />
+              <label for="people">Number of People</label><br />
+              <input
+                type="number"
+                name="people"
+                id="people"
+                placeholder="Enter number of people"
+              />
+              <br />
+              <label for="amount">Total Bill Amount</label><br />
+              <span class="line">
+                <select name="currency" id="currency">
+                  <option value="$">$</option>
+                  <option value="₹" selected>₹</option>
+                  <option value="¥">¥</option>
+                  <option value="£">£</option>
+                  <option value="€">€</option>
+                  <option value="₣">₣</option>
+                </select>
+                <input
+                  type="number"
+                  name="amount"
+                  id="amount"
+                  placeholder="Enter amount"
+                />
+              </span>
+              <br />
+
+              <center>
+                <button type="submit" class="submit" onclick="splitBill()">
+                  Split ⚡
+                </button>
+              </center>
+            </form>
+          </div>
+          <div class="simple-err noerr">
+            Unusable values, please check your input!
+          </div>
+
+          <div class="simpleResult notCalculated">
+            <div class="resultCap">Each person pays:</div>
+            <div class="simpleResultAmt">$ 0.00</div>
+          </div>
+        </div>
+      </div>
     </section>
     <footer>
-        Made with 💜 by <a href="https://twitter.com/thedebarshidas" class="twt">Debarshi Das</a>. <a class="clickButton" href="https://github.com/DarkStark9000/Mini-JavaScript-Projects/tree/Bill-Split-Calculator">Fork 🔱 + Star ⭐</a> it on <b> GitHub</b>.
+      Made with 💜 by
+      <a href="https://twitter.com/thedebarshidas" class="twt">Debarshi Das</a>.
+      <a
+        class="clickButton"
+        href="https://github.com/DarkStark9000/Mini-JavaScript-Projects/tree/Bill-Split-Calculator"
+        >Fork 🔱 + Star ⭐</a
+      >
+      it on <b> GitHub</b>.
     </footer>
-</body>
+  </body>
 </html>

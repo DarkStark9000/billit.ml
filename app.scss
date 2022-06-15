@@ -101,6 +101,13 @@ header{
     background: var(--platinum);
     padding: 24px;
 }
+.content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .bigcap{
     font-size: 2.6rem;
     font-weight: bold;
@@ -119,10 +126,18 @@ header{
     padding: 28px;
     column-gap: 18px;
 }
+
 .line{ 
     display: flex;
     justify-content: center; 
     width: 100%;
+    column-gap: 18px;
+}
+
+.advanced-mode .line{ 
+    display: flex;
+    justify-content: center; 
+    width: 80%;
     column-gap: 18px;
 }
 
@@ -162,6 +177,7 @@ header{
     color: var(--platinum);
     padding: 0 16px 16px 0; 
 }
+
 .submit{
     background: var(--neon-blue);
     color: var(--platinum);
@@ -180,7 +196,7 @@ header{
     padding: 0 16px 16px 0; 
 }
 
-.resultAmt{
+.simpleResultAmt{
     background-color: var(--go-green);
     padding: 12px 28px;
     font-size: 1.4rem;
@@ -193,7 +209,7 @@ header{
     
 }
 
-.result{
+.simpleResult{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -202,10 +218,10 @@ header{
 }
 
 .notCalculated{
-    display: none !important;
+    display: none;
 }
 
-.err{
+.simple-err{
     background-color: #f4717360;
     border-radius: 4px;
     border: 1px solid #F47174;
@@ -220,26 +236,36 @@ header{
     display: none !important;
 }
 
-.content{
+.inputGroup{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
-
+    padding: 28px;
 }
 
-.clickButton{
-    background-color: var(--xiketic);
-    padding: 6px;
-    outline: none;
+.calculatorAdv form input{
+    width: 80%;
+    height: 40px;
     border: none;
     border-radius: 4px;
-    cursor: pointer;
-    font-size: 0.7rem;
+    padding: 0 16px;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--xiketic);
+    background: var(--platinum);
+    margin-bottom: 16px;
+}
+
+.calculatorAdv label{
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--platinum);
+    padding: 0 16px 16px 0; 
 }
 
 footer{
-    margin-top: 18vh;
+    margin-top: 18vh; 
     position: relative;
     bottom: 0;
     width: 100%;

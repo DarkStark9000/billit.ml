@@ -1,17 +1,30 @@
-function splitBill () {
+function activateCalcMode(){
+    var isAdvanced = document.querySelector('.calcMode').checked;
+    
+    if (isAdvanced) {
+        document.querySelector('.simple-mode').style.display = 'none';
+        document.querySelector('.advanced-mode').style.display = 'block'; 
+
+    }   else {
+        document.querySelector('.simple-mode').style.display = 'block';
+        document.querySelector('.advanced-mode').style.display = 'none'; 
+    }
+}
+
+function splitBill() {
     const userForm = document.querySelector('.userForm');
-    const result = document.querySelector('.result');
-    const resultAmt = document.querySelector('.resultAmt');
-    const err = document.querySelector('.err');
+    const simpleResult = document.querySelector('.simpleResult');
+    const simpleResultAmt = document.querySelector('.simpleResultAmt');
+    const err = document.querySelector('.simple-err');
     const curr = document.querySelector('#currency').value;
     
     userForm.addEventListener('submit', (e) => {
         e.preventDefault();
-        err.classList.add('noerr');
-        
+        err.classList.add('noerr'); 
+
         const numOfPeople = document.querySelector('#people').value.trim();
-        const amount = document.querySelector('#amount').value.trim();
-        
+        const amount = document.querySelector('.userForm #amount').value.trim();
+
         if (numOfPeople === '' || amount === '') {
             err.innerText = 'Please fill in all fields with applicable values';
             err.classList.remove('noerr');
@@ -22,12 +35,25 @@ function splitBill () {
             err.innerText = 'Please enter a valid number';
             err.classList.remove('noerr');
         }   else {
-            
             let eachSplit = amount / numOfPeople;
             eachSplit = eachSplit.toFixed(2);
-            
-            resultAmt.innerText = curr + " " + eachSplit;
-            result.classList.remove('notCalculated'); 
+
+            simpleResultAmt.innerText = curr + " " + eachSplit;
+            simpleResult.classList.remove('notCalculated'); 
         }
+        
     });
 }
+
+function splitBillAdvanced() {
+    
+    const advUserForm = document.querySelector('.advUserForm');
+    
+    
+    advUserForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        err.classList.add('noerr');
+        
+        console.log('advanced');
+    });
+}  
